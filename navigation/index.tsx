@@ -66,13 +66,13 @@ function BottomTabNavigator() {
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Todo List',
+          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
               style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
+                opacity: pressed ? 0.1 : 1,
               })}>
               <FontAwesome
                 name="info-circle"
@@ -89,6 +89,14 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Tab Two',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="TabThree"
+        component={TabTwoScreen}
+        options={{
+          title: 'Tab Three',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
